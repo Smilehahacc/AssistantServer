@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--自动扫描实体类包下的类型，使得在后续配置文件Category.xml中使用resultType时，-->
+    <!--可以直接使用Category,而不必写全-->
+    <!---->
+    <typeAliases>
+        <package name="com.lynn.pojo"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!--提供连接数据库用的驱动，数据库名称，编码方式，账号密码-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://116.62.132.144:3306/assistant?characterEncoding=UTF-8&amp;useSSL=false&amp;serverTimezone=UTC&amp;serverTimezone=GMT%2B8&amp;allowPublicKeyRetrieval=true"/>
+<!--                <property name="url" value="jdbc:mysql://39.105.54.137:3306/zhihuserver?characterEncoding=UTF-8"/>-->
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+
+        </environment>
+    </environments>
+
+    <!--.xml文件-->
+    <mappers>
+<!--        <mapper resource="com.lynn.mapper/User.xml"/>-->
+    </mappers>
+</configuration>
